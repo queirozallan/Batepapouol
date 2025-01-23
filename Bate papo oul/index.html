@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bate Papo UOL</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+    <img src="./logo.png" class="image-left" alt="Image 1">
+    <ion-icon name="people" class="menu-icon image-right" onclick="toggleSidebar()" aria-hidden="true"></ion-icon>
+</div>
+
+<div id="overlay"></div>
+
+<div class="sidebar" id="sidebar">
+    <h2>Escolha um contato para enviar mensagem:</h2>
+    <div class="contacts">
+        <label>
+            <input type="radio" name="contact" value="Todos" checked> 
+            <ion-icon name="people" class="icon-left"></ion-icon> Todos
+        </label>
+    </div>
+
+    <h2>Escolha a visibilidade:</h2>
+    <div class="visibility-options">
+        <label>
+            <input type="radio" name="visibility" value="public" checked>
+            <ion-icon name="lock-open-outline" class="icon-left"></ion-icon> Público
+        </label>
+        <label>
+            <input type="radio" name="visibility" value="private">
+            <ion-icon name="lock-closed-outline" class="icon-left"></ion-icon> Reservadamente
+        </label>
+    </div>
+</div>
+
+<div id="chat-log" class="chat-log"></div>
+
+<div class="bottom-bar" id="bottom-bar">
+    <input type="text" id="message-input" placeholder="Escreva aqui...&#10;Enviando para Todos (público)" class="message-input">
+    <button id="send-button" class="send-button" onclick="sendMessage()">
+        <ion-icon name="send" class="image-right" aria-hidden="true"></ion-icon>
+    </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
